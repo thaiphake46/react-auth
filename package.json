@@ -8,15 +8,18 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier ./src/**/*.{js,jsx,css,md} --write"
   },
   "lint-staged": {
     "./src/**/*.{js,jsx}": "eslint --cache --fix",
-    "./src/**/*.{js,jsx,css,md}": "prettier --write"
+    "./src/**/*.{js,jsx,css,md}": "npm run format"
   },
   "dependencies": {
+    "axios": "^1.6.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
